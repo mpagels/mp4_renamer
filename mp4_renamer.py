@@ -21,7 +21,16 @@ def start():
     print()
 
     # Nutzereingabe der Aufgabe des Programms anhand der Frage
-    user_eingabe = int(input(frage2))
+    x = True
+    while x:
+        try:
+            user_eingabe = int(input(frage2))
+            if (user_eingabe > 0 and user_eingabe < 4):
+                x = False
+            else:
+                print("Fehler! Bitte 1 / 2 / 3 eingeben!")
+        except ValueError:
+            print("Fehler! Keine Zahl eingeben.")
 
     # Gibt die Eingabe zurück
     return user_eingabe
